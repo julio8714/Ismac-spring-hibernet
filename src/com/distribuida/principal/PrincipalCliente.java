@@ -30,8 +30,8 @@ public class PrincipalCliente {
 		
 		//add agregar nuevo registro a la base de datos
 		
-		//Cliente cliente2 = new Cliente(0,"1722805866","Julio", "navarrete", "tababela", "1234567890", "julio@correo.com");
-		//clienteDAO.add(cliente2);
+		Cliente cliente2 = new Cliente(0,"1722805866","Julio", "navarrete", "tababela", "1234567890", "julio@correo.com");
+		clienteDAO.add(cliente2);
 		
 		//up editar un registro existente
 		//Cliente cliente3 = new Cliente(40,"1722805855","Roberto", "Oyana", "Quito", "1234567894", "correo@correo.com");
@@ -48,7 +48,7 @@ public class PrincipalCliente {
 		
 		//findOne
 		
-		Cliente cliente = clienteDAO.findOne(1);
+		//Cliente cliente = clienteDAO.findOne(1);
 		
 		
 		

@@ -9,72 +9,60 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.distribuida.entities.Cliente;
+import com.distribuida.entities.FacturaDetalle;
+
 
 @Repository
-public class ClienteDAOImpl implements ClienteDAO {
-	
+public class FacturaDetalleDAOImpl implements FacturaDetalleDAO {
 	
 	@Autowired
 	private SessionFactory sessionFactory;
 	
 	
-	
-	
 	@Override
 	@Transactional
-	public List<Cliente> findAll() {
+	public List<FacturaDetalle> findAll() {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.getCurrentSession();
-		
-		
-		
-		
-		return session.createQuery("from Cliente", Cliente.class).getResultList();
+		return session.createQuery("FROM FacturaDetalle", FacturaDetalle.class).getResultList();
 	}
 
 	@Override
-	@Transactional
-	public Cliente findOne(int id) {
+	public FacturaDetalle findOne(int id) {
 		// TODO Auto-generated method stub
-		
 		Session session = sessionFactory.getCurrentSession();
-		return session.get(Cliente.class, id);
+		return session.get(FacturaDetalle.class, id);
 	}
 
 	@Override
-	@Transactional
-	public void add(Cliente cliente) {
+	public void add(FacturaDetalle facturaDetalle) {
 		// TODO Auto-generated method stub
-		Cliente cliente1 = new Cliente();
-		cliente1.setIdCliente(0);
-		cliente.setCedula("1722805866");
-		
-		
 		Session session = sessionFactory.getCurrentSession();
-		session.saveOrUpdate(cliente);
+		session.saveOrUpdate(facturaDetalle);
 		
 		
 	}
 
 	@Override
-	@Transactional
-	public void up(Cliente cliente) {
+	public void up(FacturaDetalle facturaDetalle) {
 		// TODO Auto-generated method stub
-		
 		Session session = sessionFactory.getCurrentSession();
-		session.saveOrUpdate(cliente);
+		session.saveOrUpdate(facturaDetalle);
 		
 	}
 
 	@Override
-	@Transactional
 	public void del(int id) {
 		// TODO Auto-generated method stub
-		
 		Session session = sessionFactory.getCurrentSession();
 		session.delete(findOne(id));
 		
-	} 
+	}
+
+	@Override
+	public List<FacturaDetalle> findAll(String busqueda) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }
