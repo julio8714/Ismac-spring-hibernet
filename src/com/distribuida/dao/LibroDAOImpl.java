@@ -27,7 +27,8 @@ public class LibroDAOImpl implements LibroDAO {
 		return session.createQuery("FROM Libro", Libro.class).getResultList();
 	}
 
-	@Override
+	@Override	
+	@Transactional
 	public Libro findOne(int id) {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.getCurrentSession();
@@ -35,6 +36,7 @@ public class LibroDAOImpl implements LibroDAO {
 	}
 
 	@Override
+	@Transactional
 	public void add(Libro libro) {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.getCurrentSession();
@@ -43,6 +45,7 @@ public class LibroDAOImpl implements LibroDAO {
 	}
 
 	@Override
+	@Transactional
 	public void up(Libro libro) {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.getCurrentSession();
@@ -59,6 +62,7 @@ public class LibroDAOImpl implements LibroDAO {
 	}
 
 	@Override
+	@Transactional
 	public List<Libro> findAll(String busqueda) {
 		// TODO Auto-generated method stub
 		return null;

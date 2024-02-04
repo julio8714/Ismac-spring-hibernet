@@ -9,7 +9,7 @@ public interface CategoriaDAO {
 	
 public List<Categoria> findAll();
 
-public Categoria findOne();
+public Categoria findOne(int id);
 
 public void add(Categoria categoria);
 
