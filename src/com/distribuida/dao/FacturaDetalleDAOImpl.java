@@ -28,6 +28,7 @@ public class FacturaDetalleDAOImpl implements FacturaDetalleDAO {
 	}
 
 	@Override
+	@Transactional
 	public FacturaDetalle findOne(int id) {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.getCurrentSession();
@@ -35,6 +36,7 @@ public class FacturaDetalleDAOImpl implements FacturaDetalleDAO {
 	}
 
 	@Override
+	@Transactional
 	public void add(FacturaDetalle facturaDetalle) {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.getCurrentSession();
@@ -44,6 +46,7 @@ public class FacturaDetalleDAOImpl implements FacturaDetalleDAO {
 	}
 
 	@Override
+	@Transactional
 	public void up(FacturaDetalle facturaDetalle) {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.getCurrentSession();
@@ -52,6 +55,7 @@ public class FacturaDetalleDAOImpl implements FacturaDetalleDAO {
 	}
 
 	@Override
+	@Transactional
 	public void del(int id) {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.getCurrentSession();
@@ -60,6 +64,7 @@ public class FacturaDetalleDAOImpl implements FacturaDetalleDAO {
 	}
 
 	@Override
+	@Transactional
 	public List<FacturaDetalle> findAll(String busqueda) {
 		// TODO Auto-generated method stub
 		return null;
