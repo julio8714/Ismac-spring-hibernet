@@ -24,6 +24,11 @@ public class PrincipalCategoria {
 			
 			System.out.println(item.toString());
 			
+			
+			
+			
+			
+			
 		}
 		
 		context.close();

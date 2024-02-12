@@ -20,11 +20,11 @@ public class AutorServiceImpl implements AutorService{
 		return autorDAO.findAll();
 	}
 
-	@Override
-	public Autor findOne(int id) {
+	//@Override
+	//public Autor findOne(int id) {
 		// TODO Auto-generated method stub
-		return autorDAO.findOne(id);
-	}
+		//return autorDAO.findOne(id);
+	//}
 
 	@Override
 	public void add(Autor autor) {
@@ -51,5 +51,28 @@ public class AutorServiceImpl implements AutorService{
 		// TODO Auto-generated method stub
 		return autorDAO.findAll(busqueda);
 	}
+
+	@Override
+	public void add(int idAutor, String nombre, String apellido, String pais, String direccion, String telefono,
+			String correo) {
+		// TODO Auto-generated method stub
+		Autor autor =new Autor(idAutor, nombre, apellido, pais, direccion, telefono, correo);
+		autorDAO.add(autor);
+		
+	}
+	@Override
+	public void up(int idAutor, String nombre, String apellido, String pais, String direccion, String telefono,
+			String correo) {
+		// TODO Auto-generated method stub
+		Autor autor =new Autor(idAutor, nombre, apellido, pais, direccion, telefono, correo);
+		autorDAO.up(autor);
+		
+	}
+
+	@Override
+	public Autor findOne(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}	
 
 }

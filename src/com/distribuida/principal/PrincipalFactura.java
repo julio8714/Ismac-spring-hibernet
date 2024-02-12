@@ -29,7 +29,7 @@ public class PrincipalFactura {
 		//CRUD
 		//ADD
 		Cliente cliente = clienteDAO.findOne(1);
-		Factura factura = new Factura(0,"FAC-0090",new Date(), 22.22,2.30,25.23, cliente);
+		Factura factura = new Factura(0,"FAC-0090",new Date(), 22.22,2.30,25.23);
 		
 		
 		//facturaDAO.add(factura);
@@ -37,7 +37,7 @@ public class PrincipalFactura {
 		
 		//up
 		Cliente cliente2 = clienteDAO.findOne(2);
-		Factura factura2 = new Factura(86,"FAC-0090",new Date(), 3.3,33.3,35.3, cliente2);
+		Factura factura2 = new Factura(86,"FAC-0090",new Date(), 3.3,33.3,35.3);
 		
 		//facturaDAO.up(factura2);
 		

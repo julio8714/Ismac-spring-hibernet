@@ -19,6 +19,11 @@ public List<FacturaDetalle> findAll();
 	public void del(int id);
 	
 	public List<FacturaDetalle> findAll(String busqueda);
+	
+	
+	public void add(int idFacturaDetealle, int cantidad, Double subtotal, int idFactura, int idLibro);
+
+	void up(int idFacturaDetealle, int cantidad, Double subtotal, int idFactura, int idLibro);
 
 
 }

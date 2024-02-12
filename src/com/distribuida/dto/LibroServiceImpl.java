@@ -1,5 +1,6 @@
 package com.distribuida.dto;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -87,6 +88,41 @@ public class LibroServiceImpl implements LibroService{
 	public List<Libro> findAll(String busqueda) {
 		// TODO Auto-generated method stub
 		return libroDAO.findAll(busqueda);
+	}
+
+	
+	@Override
+	public void add(int idLibro, String titulo, String editorial, int numPaginas, String edicion, String idioma,
+			Date fechaPublicacion, String descripcion, String tipoPasta, String isbn, String numeroEjemplares,
+			String portada, String presentacion, Double precio, int idAutor, int idCategoria) {
+		// TODO Auto-generated method stub
+			Categoria categoria = categoriaDAO.findOne(idCategoria);
+			Autor autor = autorDAO.findOne(idAutor);
+			
+		Libro libro = new Libro(idLibro, titulo,editorial,numPaginas, edicion, idioma,fechaPublicacion,descripcion, tipoPasta,isbn, numeroEjemplares, portada, presentacion,precio);
+		libro.setCategoria(categoria);
+		libro.setAutor(autor);
+		
+		libroDAO.add(libro);
+		
+	}
+	
+	@Override
+	public void up(int idLibro, String titulo, String editorial, int numPaginas, String edicion, String idioma,
+			Date fechaPublicacion, String descripcion, String tipoPasta, String isbn, String numeroEjemplares,
+			String portada, String presentacion, Double precio, int idAutor, int idCategoria) {
+		// TODO Auto-generated method stub
+			Categoria categoria = categoriaDAO.findOne(idCategoria);
+			Autor autor = autorDAO.findOne(idAutor);
+			
+		Libro libro = new Libro(idLibro, titulo,editorial,numPaginas, edicion, idioma,fechaPublicacion,descripcion, tipoPasta,isbn, numeroEjemplares, portada, presentacion,precio);
+		libro.setCategoria(categoria);
+		libro.setAutor(autor);
+		
+		libroDAO.up(libro);
+		
+	
+		
 	}
 
 }

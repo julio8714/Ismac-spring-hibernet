@@ -37,6 +37,16 @@ public class FacturaDetalle {
 	private Libro libro;
 	
 	public FacturaDetalle() {}
+	
+	
+
+	public FacturaDetalle(int idFacturaDetealle, int cantidad, Double subtotal) {
+		this.idFacturaDetealle = idFacturaDetealle;
+		this.cantidad = cantidad;
+		this.subtotal = subtotal;
+	}
+
+
 
 	public int getIdFacturaDetealle() {
 		return idFacturaDetealle;

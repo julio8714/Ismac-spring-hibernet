@@ -66,6 +66,7 @@ public class FacturaDAOImpl implements FacturaDAO {
 	}
 
 	@Override
+	@Transactional
 	public List<Factura> findAll(String busqueda) {
 		// TODO Auto-generated method stub
 		return null;

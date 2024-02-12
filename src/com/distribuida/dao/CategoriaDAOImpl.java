@@ -2,6 +2,7 @@ package com.distribuida.dao;
 
 import java.util.List;
 
+import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import org.hibernate.Session;
@@ -9,7 +10,9 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.distribuida.entities.Autor;
 import com.distribuida.entities.Categoria;
+import com.distribuida.entities.FacturaDetalle;
 
 
 @Repository
@@ -39,22 +42,50 @@ public class CategoriaDAOImpl implements CategoriaDAO{
 	}
 
 	@Override
+	@Transactional
 	public void add(Categoria categoria) {
 		// TODO Auto-generated method stub
+		Session session = sessionFactory.getCurrentSession();
+		session.saveOrUpdate(categoria);
 		
 	}
 
 	@Override
+	@Transactional
 	public void up(Categoria categoria) {
 		// TODO Auto-generated method stub
+		Session session = sessionFactory.getCurrentSession();
+		session.saveOrUpdate(categoria);
 		
 	}
 
 	@Override
+	@Transactional
 	public void del(int id) {
 		// TODO Auto-generated method stub
+		Session session = sessionFactory.getCurrentSession();
+		session.delete(findOne(id));
+	}
+		
+	@Override
+	@Transactional
+	public List<Categoria> findAll(String busqueda) {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.getCurrentSession();
+		
+		return (List<Categoria>) session.get(Categoria.class, busqueda);
+		
+		
+		
+		
+		
 		
 	}
+		
+		
+	
+		
+
 	
 
 }

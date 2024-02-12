@@ -1,5 +1,6 @@
 package com.distribuida.dto;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -73,4 +74,28 @@ Cliente cliente = clienteDAO.findOne(factura.getCliente().getIdCliente());
 		return facturaDAO.findAll(busqueda);
 	}
 
+	
+
+	@Override
+	public void add(int idFactura, String numFactura, Date fecha, Double totalNeto, Double iva, Double total,
+			int idCliente) {
+		// TODO Auto-generated method stub
+		Cliente clietnte = clienteDAO.findOne(idCliente);
+		Factura factura = new Factura(idFactura, numFactura, fecha, totalNeto, iva, total);
+		factura.setCliente(clietnte);
+		 facturaDAO.add(factura);
+		
+	}
+
+	@Override
+	public void up(int idFactura, String numFactura, Date fecha, Double totalNeto, Double iva, Double total,
+			int idCliente) {
+		// TODO Auto-generated method stub
+		Cliente clietnte = clienteDAO.findOne(idCliente);
+		Factura factura = new Factura(idFactura, numFactura, fecha, totalNeto, iva, total);
+		factura.setCliente(clietnte);
+		 facturaDAO.up(factura);
+		 
+		
+	}
 }

@@ -22,13 +22,13 @@ public class PrincipalAutor {
 		
 		//add
 		
-		Autor autor = new Autor(0, "nomnre1", "apellido1", "pais1","direccion1","telefono1","correo1");
+		//Autor autor = new Autor(0, "nomnre1", "apellido1", "pais1","direccion1","telefono1","correo1");
 		
-		autorDAO.add(autor);
+		//autorDAO.add(autor);
 		
 		
 		//up
-		Autor autor2 = new Autor(54, "nombre22", "apellido22", "pais22","direccion22","telefono22","correo22");
+		//Autor autor2 = new Autor(54, "nombre22", "apellido22", "pais22","direccion22","telefono22","correo22");
 		//autorDAO.up(autor2);
 		
 		

@@ -17,6 +17,8 @@ public void up(Categoria categoria);
 
 public void del(int id);
 
+List<Categoria> findAll(String busqueda);
+
 
 	
 }

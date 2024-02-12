@@ -35,30 +35,35 @@ public class PrincipalCliente {
 		//clienteService.add(cliente2);
 		//clienteDAO.add(cliente2);
 		
+		clienteService.add(0,"1722805866","Julio", "navarrete", "tababela", "1234567890", "julio@correo.com");
+		
 		//up editar un registro existente
-		Cliente cliente3 = new Cliente(42,"1722805855","Roberto", "Oyana", "Quito", "1234567894", "correo@correo.com");
+		//Cliente cliente3 = new Cliente(42,"1722805855","Roberto", "Oyana", "Quito", "1234567894", "correo@correo.com");
 		//clienteDAO.up(cliente3);
 		//clienteService.up(cliente3);
+		//clienteService.up(52,"1722805855","Roberto", "Oyana", "Quito", "1234567894", "correo@correo.com");
 		
 		//del borrar
 		
 		//Cliente cliente3 = new Cliente(40,"1722805855","Roberto", "Oyana", "Quito", "1234567894", "correo@correo.com");
-		clienteService.del(41);
+		//clienteService.del(51);
 		
 		
 		List<Cliente> clientes = clienteService.findAll();
+			for (Cliente item : clientes) {
+			
+				System.out.println(item.toString());	
+			
+		}
 		
 		//findOne
 		
 		//Cliente cliente = clienteService.findOne(1);
+		// System.out.println(cliente.toString());
 		
 		
 		
-		for (Cliente item : clientes) {
-			
-			System.out.println(item.toString());	
-			
-		}
+		
 		
 		
 		

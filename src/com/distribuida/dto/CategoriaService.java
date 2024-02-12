@@ -15,6 +15,12 @@ public interface CategoriaService {
 	public void up(Categoria categoria);
 
 	public void del(int id);
+	
+	public void add(int idCategoria, String categoria, String descripcion);
+
+	void up(int idCategoria, String categoria, String descripcion);
+
+	List<Categoria> findAll(String busqueda);
 
 
 }

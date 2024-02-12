@@ -94,7 +94,44 @@ Factura factura = facturaDAO.findOne(facturaDetalle.getFactura().getIdFactura())
 		// TODO Auto-generated method stub
 		return facturaDetalleDAO.findAll(busqueda);
 	}
+
+	@Override
+	public void add(int idFacturaDetealle, int cantidad, Double subtotal, int idFactura, int idLibro) {
+		// TODO Auto-generated method stub
+		
+		Factura factura = facturaDAO.findOne(idFactura);
+		Libro libro = libroDAO.findOne(idLibro);
+		// @scope(singlenton) se decalara y usa una variable y apunta a un solo espacio de memoria
+		// @Scope(prototype) se declara una u se usa varias varriales o espacionde memoria. 
 	
-	
-	
+		
+		
+		FacturaDetalle facturaDetalle = new FacturaDetalle(idFacturaDetealle, cantidad, subtotal);
+		
+		facturaDetalle.setFactura(factura);
+		facturaDetalle.setLibro(libro);
+		
+		facturaDetalleDAO.add(facturaDetalle);
+		
+		
+		
+		
 	}
+
+	@Override
+	public void up(int idFacturaDetealle, int cantidad, Double subtotal, int idFactura, int idLibro) {
+		// TODO Auto-generated method stub
+		Factura factura = facturaDAO.findOne(idFactura);
+		Libro libro = libroDAO.findOne(idLibro);
+		
+		
+		FacturaDetalle facturaDetalle = new FacturaDetalle(idFacturaDetealle, cantidad, subtotal);
+		
+		facturaDetalle.setFactura(factura);
+		facturaDetalle.setLibro(libro);
+		
+		facturaDetalleDAO.up(facturaDetalle);
+		
+	}
+
+}

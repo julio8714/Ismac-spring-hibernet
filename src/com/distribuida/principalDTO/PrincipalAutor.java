@@ -17,62 +17,22 @@ public class PrincipalAutor {
 		AutorService autorService = context.getBean("autorServiceImpl", AutorService.class);
 		
 		//crud
-		//findall
+		//add
+		autorService.add(0, "nombre1", "apellido1","pais1","direccion1","telefono1","correo1");
+		System.out.println(">>>>ADD>>>>>>"+autorService.findOne(72));
 		
-		//Autor autor = new Autor(0, "a", "d", "g", "r", "b", "r");
-		//autorService.add(autor);
+		//up
+		autorService.up(72, "nombre2", "apellido2","pais2","direccion2","telefono2","correo2");
+		System.out.println(">>>>UP>>>>>>"+autorService.findOne(72));
 		
+		//del
+		autorService.del(72);
+		try {System.out.println(">>>>DEL>>>>>>"+autorService.findOne(72));} catch (Exception e) {e.printStackTrace();} 
 		
+		//fin all
+		for (Autor item : autorService.findAll()) {System.out.println(item.toString());}
 		
-		//for (Cliente item : clientes) {
-			
-		//	System.out.println(item.toString());
-			
-		//}
-		
-		//System.out.println(cliente.toString());
-		
-		//add agregar nuevo registro a la base de datos
-		
-		//Cliente cliente2 = new Cliente(0,"1722805866","Julio", "navarrete", "tababela", "1234567890", "julio@correo.com");
-		//clienteService.add(cliente2);
-		//clienteDAO.add(cliente2);
-		
-		//up editar un registro existente
-		//Autor autor = new Autor();
-		//clienteDAO.up(cliente3);
-		//clienteService.up(cliente3);
-		
-		//del borrar
-		
-		//Cliente cliente3 = new Cliente(40,"1722805855","Roberto", "Oyana", "Quito", "1234567894", "correo@correo.com");
-		autorService.del(0);
-		
-		
-		List<Autor> autores = autorService.findAll();
-		
-
-		for (Autor item : autores) {
-			
-			System.out.println(item.toString());	
-			
-		}
-		
-		
-		
-		//findOne
-		
-	Autor autor = autorService.findOne(1);
-		System.out.println(autor.toString());
-		
-		
-		
-		
-		
-		
-		
-		
-		
+	
 		
 		
 		
